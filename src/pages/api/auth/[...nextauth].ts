@@ -43,8 +43,7 @@ export default NextAuth({
                   )
                 )
               ),
-              q.Match("subscription_by_status"),
-              "active",
+              q.Match(q.Index("subscription_by_status"), "active"),
             ])
           )
         );
